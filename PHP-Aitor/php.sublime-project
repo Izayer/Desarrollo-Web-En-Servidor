@@ -1,0 +1,14 @@
+{
+  "folders":
+  [
+    {
+    "follow_symlinks": true,
+    "path": "/home/ni/workspace/php-examples"
+    }
+  ],
+  "settings": {
+      "xdebug": {
+          "url": "http://localhost/workspace/php-examples/"
+      }
+  }
+}
