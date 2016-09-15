@@ -1,0 +1,27 @@
+body, html{
+    height: 100%;
+ 	background-repeat: no-repeat;
+ 	background-color: #0040FF;
+ 	font-family: 'Oxygen', sans-serif;
+ 	background: url('../img/fondo2.png') no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	
+}
+.main{
+ 	margin-top: -50px;
+ 	margin-left: 800px;
+}
+
+.main-center{
+ 	margin-top: 0px;
+ 	margin: 0 auto;
+ 	max-width: 330px;
+    padding: 40px 40px;
+
+}
+.marg-top{
+    margin-top: 50px;
+}
