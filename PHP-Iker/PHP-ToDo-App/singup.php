@@ -96,7 +96,7 @@
   <body>
        
     <div class="container">
-			<div class="row main ">
+			<div class="row col-xs-12 col-md-4 col-md-offset-8 marg-top">
 				<div class="panel-heading">
 	               <div class="panel-title text-center marg-top">
 	               		<h1 class="title main-login">Erregistroa</h1>

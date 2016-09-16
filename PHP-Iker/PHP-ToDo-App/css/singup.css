@@ -14,7 +14,13 @@ body, html{
  	margin-top: -50px;
  	margin-left: 650px;
 }
+.main-center{
+ 	margin-top: 0px;
+ 	margin: 0 auto;
+ 	max-width: 330px;
+    padding: 40px 40px;
 
+}
 .main-center{
  	margin-top: 0px;
  	margin: 0 auto;
@@ -23,5 +29,5 @@ body, html{
 
 }
 .marg-top{
-    margin-top: 50px;
+    margin-top: 0%;
 }
