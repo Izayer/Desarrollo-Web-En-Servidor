@@ -5,10 +5,10 @@
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
       
-      $myusername = mysqli_real_escape_string($db,$_POST['name']);
+      $myusername = mysqli_real_escape_string($db,$_POST['username']);
       $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
       
-      $sql = "SELECT ID FROM usuarios WHERE username = '$myusername' and password = '$mypassword'";
+      $sql = "SELECT ID FROM usuarios WHERE username = '$myusername'";
       $result = mysqli_query($db,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
@@ -19,22 +19,30 @@
 		
       if($count == 1) {
          //session_register("myusername");
-         $_SESSION['login_user'] = $myusername;
-         
-         header("location: lists.php");
-      }else {
-         $error = "Your Login Name or Password is invalid";
-         
-         ?>
+          ?>
          
         <div class="alert alert-danger alert-dismissible fade in" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
         </button>
-        <strong>OKERRA!</strong> Gaizki sartu duzu Erabiltzailea edo Pasahitza.
+        <strong> <?php echo $_POST['username']; ?> erabiltzailea dagoeneko sortua dago.</strong> Sortu ezazu beste erabiltzaile bat.
         </div>
         
-				<?php
+	<?php
+	
+		
+				
+      }else {
+        
+         $sql = "INSERT INTO usuarios (username, password, nombre, email)
+				VALUES ('" + $_POST['username'] + "','" + $_POST['password'] + "','" + $_POST['name'] + "', '" + $_POST['email'] + "')";
+		echo "$sql";		
+		if ($db->query($sql) === TRUE) {
+    		echo "New record created successfully";
+			} else {
+    		echo "Error: " . $sql . "<br>" . $db->error;
+		}
+        
       }
    }
 ?>
@@ -96,7 +104,7 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
 									<input type="text" class="form-control" name="name" id="name"  placeholder="Sar ezazu zure izena" data-error="Sar ezazu ongi zure Izena" required/>
-									<div class="help-block with-errors"></div>
+									<!--<div class="help-block with-errors"></div>-->
 								</div>
 							</div>
 						</div>
@@ -107,7 +115,7 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
 									<input type="text" class="form-control" name="email" id="email"  placeholder="Sar ezazu zure E-posta" data-error="Sar ezazu ongi zure E-posta" required/>
-									<div class="help-block with-errors"></div>
+									<!--<div class="help-block with-errors"></div>-->
 								</div>
 							</div>
 						</div>
@@ -118,7 +126,7 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span> 
 									<input type="text" class="form-control" name="username" id="username"  placeholder="Sar ezazu zure erabiltzailea" data-error="Sar ezazu ongi zure Erabiltzailea" required/>
-									<div class="help-block with-errors"></div>
+									<!--<div class="help-block with-errors"></div>-->
 								</div>
 							</div>
 						</div>
@@ -129,7 +137,7 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
 									<input type="password" class="form-control" name="password" id="password"  placeholder="Sar ezazu zure pasahitza" data-error="Sar ezazu ongi zure Pasahitza" required/>
-									<div class="help-block with-errors"></div>
+									<!--<div class="help-block with-errors"></div>-->
 								</div>
 							</div>
 						</div>
@@ -140,7 +148,7 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
 									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Errepika ezazu pasahitza" data-error="Ez da aurrekoaren berdina" required/>
-									<div class="help-block with-errors"></div>
+									<!--<div class="help-block with-errors"></div>-->
 								</div>
 							</div>
 						</div>
@@ -160,6 +168,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-
+	<script type="text/javascript" src="js/validator.js"></script>
   </body>
 </html>
