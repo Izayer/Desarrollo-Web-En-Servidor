@@ -14,7 +14,7 @@
       $active = $row['active'];
       
       $count = mysqli_num_rows($result);
-      
+      $result -> close();
       // If result matched $myusername and $mypassword, table row must be 1 row
 		
       if($count == 1) {
@@ -34,14 +34,23 @@
 				
       }else {
         
-         $sql = "INSERT INTO usuarios (username, password, nombre, email) VALUES ('" + $_POST['username'] + "','" + $_POST['password'] + "','" + $_POST['name'] + "', '" + $_POST['email'] + "')";
-		echo $sql;		
-		/*if ($db->query($sql) === TRUE) {
-    		echo "New record created successfully";
+         $sql = "INSERT INTO usuarios (username, password, nombre, email) 
+         VALUES ('" . $_POST['username'] . "','" . $_POST['password'] . "','" . $_POST['name'] . "', '" . $_POST['email'] . "');";
+		
+		if ($db->query($sql) === TRUE) {
+    		
+    		header("location: lists.php");
 			} else {
-    		echo "Error: " . $sql . "<br>" . $db->error;
-		}*/
-        
+				?>
+    		<div class="alert alert-danger alert-dismissible fade in" role="alert">
+        	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        	<span aria-hidden="true">&times;</span>
+        	</button>
+        	<strong> Zerbait oker atera da.</strong> Saia zaitez beranduago.
+        	</div>
+        	<?php
+		}
+        $mysqli->close();
       }
    }
 ?>
@@ -113,7 +122,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Sar ezazu zure E-posta" data-error="Sar ezazu ongi zure E-posta" required/>
+									<input type="email" class="form-control" name="email" id="email"  placeholder="Sar ezazu zure E-posta" data-error="Sar ezazu ongi zure E-posta" required/>
 									<!--<div class="help-block with-errors"></div>-->
 								</div>
 							</div>
