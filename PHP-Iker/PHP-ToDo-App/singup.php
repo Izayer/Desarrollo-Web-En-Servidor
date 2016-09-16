@@ -34,14 +34,13 @@
 				
       }else {
         
-         $sql = "INSERT INTO usuarios (username, password, nombre, email)
-				VALUES ('" + $_POST['username'] + "','" + $_POST['password'] + "','" + $_POST['name'] + "', '" + $_POST['email'] + "')";
-		echo "$sql";		
-		if ($db->query($sql) === TRUE) {
+         $sql = "INSERT INTO usuarios (username, password, nombre, email) VALUES ('" + $_POST['username'] + "','" + $_POST['password'] + "','" + $_POST['name'] + "', '" + $_POST['email'] + "')";
+		echo $sql;		
+		/*if ($db->query($sql) === TRUE) {
     		echo "New record created successfully";
 			} else {
     		echo "Error: " . $sql . "<br>" . $db->error;
-		}
+		}*/
         
       }
    }
