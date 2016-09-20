@@ -38,8 +38,11 @@
          VALUES ('" . $_POST['username'] . "','" . $_POST['password'] . "','" . $_POST['name'] . "', '" . $_POST['email'] . "');";
 		
 		if ($db->query($sql) === TRUE) {
-    		
-    		header("location: lists.php");
+			$sql = "SELECT ID FROM usuarios WHERE username = '$myusername'";
+    		$resultID = mysqli_query($db,$sql);
+    		$rowID = mysqli_fetch_array($resultID,MYSQLI_ASSOC);
+    		$_SESSION["id"]=$rowID['ID'];
+    		//header("location: lists.php");
 			} else {
 				?>
     		<div class="alert alert-danger alert-dismissible fade in" role="alert">
@@ -50,7 +53,7 @@
         	</div>
         	<?php
 		}
-        $mysqli->close();
+        //$mysqli->close();
       }
    }
 ?>

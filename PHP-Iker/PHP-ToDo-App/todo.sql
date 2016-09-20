@@ -82,7 +82,7 @@ CREATE TABLE `usuarios` (
   `telefono` varchar(30) DEFAULT NULL,
   `email` varchar(40) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,7 +91,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Izayer','iker','Iker','Izaguirre','943555677','iker_izaguirre@hotmail.com'),(2,'Ravasaurio','aitor','Aitor','Redondo','943555678','aredondob@gmail.com');
+INSERT INTO `usuarios` VALUES (1,'Izayer','iker','Iker','Izaguirre','943555677','iker_izaguirre@hotmail.com'),(2,'Ravasaurio','aitor','Aitor','Redondo','943555678','aredondob@gmail.com'),(4,'asdf','asdf','asdf','',NULL,'asdf'),(5,'Patata','haizea','Haizea','',NULL,'haizea@gmail.com'),(6,'xempro','asdf','Xempronio','',NULL,'adf@asdf'),(7,'eloisa','asdf','eloisa','',NULL,'eloisa@asdf'),(8,'po','asdf','asdf','',NULL,'af@asdf');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,4 +132,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-16 11:22:59
+-- Dump completed on 2016-09-20  6:35:41
