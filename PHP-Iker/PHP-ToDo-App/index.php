@@ -19,7 +19,7 @@
 		
       if($count == 1) {
          //session_register("myusername");
-         $sql = "SELECT ID FROM usuarios WHERE username = '$myusername'";
+        $sql = "SELECT ID FROM usuarios WHERE username = '$myusername'";
     	$resultID = mysqli_query($db,$sql);
     	$rowID = mysqli_fetch_array($resultID,MYSQLI_ASSOC);
     	
@@ -27,7 +27,7 @@
     	
         $_SESSION['username'] = $myusername;
         echo $_SESSION['username'];  
-        
+        $resultID->close();
         header("location: lists.php");
       }else {
          $error = "Your Login Name or Password is invalid";

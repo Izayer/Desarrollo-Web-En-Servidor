@@ -1,5 +1,4 @@
 <?php
-   include("config.php");
-   session_start();
-   echo $_SESSION['id'];
+   include("userData.php");
+   echo $nombre;
    ?>

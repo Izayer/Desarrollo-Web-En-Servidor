@@ -42,7 +42,8 @@
     		$resultID = mysqli_query($db,$sql);
     		$rowID = mysqli_fetch_array($resultID,MYSQLI_ASSOC);
     		$_SESSION["id"]=$rowID['ID'];
-    		//header("location: lists.php");
+    		$resultID->close();
+    		header("location: lists.php");
 			} else {
 				?>
     		<div class="alert alert-danger alert-dismissible fade in" role="alert">
