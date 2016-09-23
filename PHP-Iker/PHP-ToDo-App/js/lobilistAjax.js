@@ -1,7 +1,7 @@
 $(function () {
 $('#actions-by-ajax').lobiList({
         actions: {
-            load: 'crud/load.json',
+            load: 'crud/load.php',
             insert: 'crud/insert.php',
             delete: 'crud/delete.php',
             update: 'crud/update.php'

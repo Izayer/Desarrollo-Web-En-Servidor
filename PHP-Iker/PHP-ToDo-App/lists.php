@@ -33,10 +33,10 @@
 <body>
 
 <div class="container">
-    <div class="bs-example">
-                    <h4>Actions by ajax</h4>
+    
+                    
                     <div id="actions-by-ajax"></div>
-                </div>
+               
         
 </div>
 
@@ -57,7 +57,7 @@
 
 <script src="lib/lobibox/js/lobibox.min.js"></script>
 <script src="lib/highlight/highlight.pack.js"></script>
-<script src="js/lobilist.js"></script>
+<script src="js/lobilistAjax.js"></script>
 
 </body>
 </html>
