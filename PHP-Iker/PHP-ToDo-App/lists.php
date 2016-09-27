@@ -11,8 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Lobilist - jQuery plugin for todo lists. Supports drag & drop issues. Multiple lists with different colors.
-        Support for communication to backend</title>
+    <title> <?php echo $nombre . "-(r)en lista";?></title>
     
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
