@@ -40,6 +40,12 @@
 </div>
 
 
+<script type="text/javascript">
+    var $lobilist = $('actions-by-ajax').data('lobiList');
+    
+    var = $lobilist.$lists.length;
+</script>
+
 <!--Default installation-->
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/jquery/jquery-ui.min.js"></script>

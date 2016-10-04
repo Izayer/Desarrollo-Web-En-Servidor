@@ -25,7 +25,7 @@ ORDER BY listas.ID;";
             "title": "' . $row['lnombre'] . '",
             "defaultStyle": "lobilist-info",
             "items": [
-                {
+                {   "id": '.true.',
                     "title": "' . $row['nombre'] . '",
                     "description": "' . $row['descripcion'] . '",
                     "dueDate": "'. $row['fechaFin'] .'"
@@ -63,6 +63,7 @@ ORDER BY listas.ID;";
             ]
         }
     ]
+   
 }';
         
         
@@ -84,6 +85,7 @@ ORDER BY listas.ID;";
             ]
         }
     ]
+    
 }';
       }
 ?>
